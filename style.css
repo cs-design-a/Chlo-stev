@@ -1,0 +1,302 @@
+/*
+ * Feuille de style CSS pour le site "Tournoi d'Elancourt 2023-2024"
+ * Version Complète et Corrigée (Bleu Marine / Texte Blanc dans Header/Footer)
+ */
+
+/* --- Variables de Thème --- */
+:root {
+    --couleur-primaire: #001F3F;          /* Bleu Marine foncé */
+    --couleur-fond-page: #FFFFFF;         /* Blanc pour le contenu principal */
+    --couleur-texte-sombre: #000000;      /* Noir pour le contenu principal */
+    --couleur-texte-clair: #FFFFFF;       /* Blanc pour header et footer */
+    --couleur-bordure-article: #DDDDDD;   /* Bordure pour les encadrés */
+    --couleur-fond-article: #f9f9f9;      /* Fond pour les encadrés */
+    --police-principale: 'Arial', sans-serif; /* Police choisie */
+}
+
+/* --- Styles Généraux --- */
+body {
+    font-family: var(--police-principale);
+    margin: 0;
+    padding: 0;
+    color: var(--couleur-texte-sombre);      
+    background-color: var(--couleur-fond-page); 
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- En-tête (Header) --- */
+header {
+    background-color: var(--couleur-primaire); 
+    color: var(--couleur-texte-clair);         
+    padding-top: 25px;
+    text-align: center;
+}
+
+header h1 {
+    margin-top: 0;
+    margin-bottom: 0px;
+    font-size: 2.2em;
+    font-weight: bold;
+    color: var(--couleur-texte-clair); 
+}
+
+/* --- Barre de Navigation (Menu) : Horizontal et Centré --- */
+nav {
+    width: 100%;
+    background-color: var(--couleur-primaire);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centre le menu horizontalement */
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 30px;
+    color: var(--couleur-texte-clair); 
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- Contenu Principal (Main) --- */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--couleur-fond-page); 
+    color: var(--couleur-texte-sombre); 
+}
+
+/* --- Pied de Page (Footer) --- */
+footer {
+    background-color: var(--couleur-primaire); 
+    color: var(--couleur-texte-clair);         
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.85em;
+}
+
+/* ========================================================= */
+/* --- STYLES DES ARTICLES ET DE LEUR CONTENU --- */
+/* ========================================================= */
+
+/* 1. Centrage des Titres de niveau 2 (H2) */
+h2 {
+    text-align: center;
+    margin-top: 35px; 
+    margin-bottom: 20px;
+    color: var(--couleur-primaire); 
+}
+
+/* 2. Styles pour encadrer et centrer le contenu des articles (Page d'Accueil et Événement) */
+.bio-article, .mos-article, .nanterre-article, .presentation-article {
+    /* Limite la largeur de l'encadré */
+    max-width: 900px; 
+    
+    /* Centre l'encadré horizontalement */
+    margin-left: auto; 
+    margin-right: auto;
+    
+    /* Ajoute l'encadrement visuel */
+    border: 1px solid var(--couleur-bordure-article);
+    border-radius: 8px; 
+    padding: 25px; 
+    margin-bottom: 40px; 
+    background-color: var(--couleur-fond-article);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* --- PAGE D'ACCUEIL : Styles spécifiques à l'image --- */
+
+/* Conteneur de l'image (pour l'article Université Paris Nanterre) */
+.content-with-image {
+    display: flex;
+    gap: 30px; /* Espace entre le texte et l'image */
+    align-items: flex-start; 
+}
+
+.content-with-image p {
+    flex: 1; /* Le paragraphe prend l'espace restant */
+}
+
+.content-with-image img {
+    max-width: 35%; /* L'image prend 35% de la largeur du conteneur */
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- PAGE ÉVÈNEMENT : Styles spécifiques aux images --- */
+
+.event-details {
+    position: relative;
+    padding: 10px; 
+    overflow: hidden; 
+}
+
+/* 1. Image en haut à gauche (bailly 3.jpg) */
+.event-details .image-top-left {
+    float: left; /* Fait flotter l'image à gauche */
+    width: 200px; /* Taille réduite */
+    height: auto;
+    margin-right: 20px; 
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+/* 2. Image en bas à droite (bailly 2.jpg) */
+.event-details .image-bottom-right {
+    float: right; /* Fait flotter l'image à droite */
+    width: 180px; /* Taille réduite */
+    height: auto;
+    margin-left: 20px; 
+    margin-top: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+/* 3. Image à côté de l'article (bailly 1.jpg) - Palmarès */
+.winners-article .content-with-image {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding-top: 10px;
+}
+
+.winners-article .image-side {
+    max-width: 40%; 
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    order: -1; /* Place l'image à gauche du texte */
+}
+
+.winners-article .content-with-image div {
+    flex: 1; 
+}
+
+/* ========================================================= */
+/* --- RESPONSIVE DESIGN (Pour la lisibilité sur mobile) --- */
+/* ========================================================= */
+/* --- PAGE DÉROULÉ : Styles spécifiques à l'image --- */
+
+.deroule-content {
+    /* Important pour contenir le flottant dans l'article encadré */
+    overflow: hidden; 
+}
+
+.image-deroule-left {
+    float: left; /* Fait flotter l'image à gauche pour que le texte l'entoure */
+    width: 150px; /* Taille de l'image : TRES PETITE */
+    height: auto;
+    margin-right: 25px; /* Espace à droite du texte */
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* --- PAGE INFOS PRATIQUES : Style spécifique pour l'image à gauche --- */
+
+.practical-info-left-img {
+    float: left; /* Fait flotter l'image à gauche */
+    width: 180px; /* Taille réduite */
+    height: auto;
+    margin-right: 20px; /* Espace à droite du texte */
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+/* Gestion du responsive pour les petits écrans */
+@media (max-width: 768px) {
+    .practical-info-left-img {
+        float: none;
+        display: block;
+        margin: 15px auto; /* Centrer l'image sur mobile */
+        width: 60%; 
+    }
+}
+
+/* --- PAGE INSCRIPTIONS : Gestion des deux colonnes (articles côte à côte) --- */
+
+.two-columns-layout {
+    /* Utilise le même max-width que les articles pour rester centré */
+    max-width: 900px; 
+    margin: 0 auto; /* Centre le conteneur */
+    display: flex; /* Active l'affichage côte à côte */
+    gap: 30px; /* Espace entre les deux articles */
+    align-items: stretch; /* Assure que les articles aient la même hauteur */
+}
+
+.contact-article, .convivialite-article {
+    flex: 1; /* Chaque article prend une part égale de l'espace disponible */
+    /* Les styles de bordure et de fond sont hérités de .presentation-article */
+    margin-bottom: 0; /* Annule la marge inférieure des articles pour que le flexbox soit propre */
+}
+
+/* Gestion du responsive pour les petits écrans (les empiler) */
+@media (max-width: 768px) {
+    .two-columns-layout {
+        flex-direction: column; /* Empile les deux articles l'un sur l'autre */
+        gap: 40px;
+    }
+    /* Rétablit la marge inférieure pour séparer les articles une fois empilés */
+    .contact-article, .convivialite-article {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustements généraux */
+    main {
+        padding: 20px 10px;
+    }
+    nav ul li a {
+        padding: 12px 15px;
+    }
+
+    /* Articles (supprime l'affichage côte à côte des images) */
+    .content-with-image {
+        flex-direction: column;
+    }
+
+    .content-with-image img,
+    .winners-article .image-side {
+        max-width: 100% !important; /* L'image prend toute la largeur sur mobile */
+        margin: 15px 0;
+    }
+    
+    /* Gestion des images flottantes (les centrer sur mobile) */
+    .event-details .image-top-left,
+    .event-details .image-bottom-right {
+        float: none;
+        display: block;
+        margin: 15px auto; /* Centrer l'image */
+        width: 80%;
+    }
+}
